@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Varsity_Management.Models.Class_management>
+
+@{ 
+    ViewData["title"] = "Index";
+}
+<a asp-action="Create"> Create here</a>
+<table class="table" >
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(Model => Model.Class)</th>
+            <th>@Html.DisplayNameFor(Model => Model.Section)</th>
+            <th>@Html.DisplayNameFor(Model=> Model.Number_Student)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(c=> item.Class)</td>
+                <td>@Html.DisplayFor(c => item.Section)</td>
+                <td>@Html.DisplayFor(c => item.Number_Student)</td>
+                <td>
+                    <a asp-action="Edit" class="btn btn-success" asp-route-id="@item.Id">  Update </a>
+                    <a asp-action="Delete" class="btn btn-success" asp-route-id="@item.Id">  Delete </a>
+
+                </td>
+            </tr>
+
+
+        }
+
+    </tbody>
+</table>

@@ -1,0 +1,35 @@
+﻿@model Varsity_Management.ViewModel.ExamViewModel
+
+@{
+    ViewData["Title"] = "GetExam";
+}
+
+<h1> Assign Exam  </h1>
+
+    <form asp-action="AssignExam" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        
+        <div class="row">
+            <div class="col-6">
+                    <div class="form-group">
+                    @Html.LabelFor(Model => Model.ExamId, "Exam_Name", htmlAttributes: new { @class = "control-label" })
+                    @Html.DropDownListFor(Model => Model.ExamId, new SelectList(ViewBag.ExamId, "Value", "Text"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(Model => Model.ExamId)
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(Model => Model.ClassId, "Class", htmlAttributes: new { @class = "control-label" })
+                    @Html.DropDownListFor(Model => Model.ClassId, new SelectList(ViewBag.Class, "Value", "Text"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(Model => Model.ClassId)
+
+                </div>
+            </div>
+        </div>
+            
+
+            
+        <div class="form-group">
+            <input type="submit" value="save" class="text-danger" />
+        </div>
+
+    </form>

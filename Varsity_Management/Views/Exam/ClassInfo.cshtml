@@ -1,0 +1,29 @@
+﻿@model List<Varsity_Management.ViewModel.ExamViewModel>
+
+@{
+    ViewData["Title"] = "GetExam";
+}
+
+<h1> Assign Exam and Class Information </h1>
+<div class="row">
+   <table class="table">
+    <thead>
+        <tr>
+            <th>Exam Name</th>
+            <th>Class Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+            {
+            <tr>
+                <td>@Html.DisplayFor(c => item.Exam_Name)</td>
+                <td>@Html.DisplayFor(c => item.Class)</td>
+
+            </tr>
+
+         }
+     
+    </tbody>
+</table>
+</div>

@@ -1,0 +1,25 @@
+﻿@model Varsity_Management.Models.Class_management
+
+@{
+    ViewData["Title"] = "Asign";
+}
+
+<h1>Asign</h1>
+<div class="row">
+    <form asp-action="GatAsign" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            @Html.LabelFor(Model => Model.Class, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.DropDownListFor(Model => Model.Class, new SelectList(Enum.GetValues(typeof(Class))), new { @class = "form-control" })
+            @Html.ValidationMessageFor(Model => Model.Class, "", new { @class = "text-denger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(Model => Model.Section, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.DropDownListFor(Model => Model.Section, new SelectList(Enum.GetValues(typeof(Section))), new { @class = "form-control" })
+            @Html.ValidationMessageFor(Model => Model.Section, "", new { @class = "text-denger" })
+        </div>
+        <div class="form-group">
+            <input type="submit" value="save" class="text-danger" />
+        </div>
+    </form>
+</div>

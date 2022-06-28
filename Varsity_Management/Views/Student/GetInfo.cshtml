@@ -1,0 +1,30 @@
+﻿@model List<Class_management>
+
+@{
+    ViewData["Title"] = "GetExam";
+}
+
+<h1> Assign Exam and Class Information </h1>
+<a class="btn btn-success" asp-action="GatAsign"> Assign Section</a>
+<div class="row">
+   <table class="table">
+    <thead>
+        <tr>
+            <th>Class Name</th>
+            <th>Section Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+            {
+            <tr>
+                <td>@Html.DisplayFor(c => item.Class)</td>
+                <td>@Html.DisplayFor(c => item.Section)</td>
+
+            </tr>
+
+         }
+     
+    </tbody>
+</table>
+</div>

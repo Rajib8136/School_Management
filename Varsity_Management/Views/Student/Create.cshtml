@@ -1,0 +1,91 @@
+﻿@model Varsity_Management.Models.Student
+
+@{ 
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="First_Name" class="control-label"></label>
+                <input asp-for="First_Name" class="form-control" />
+                <span asp-validation-for="First_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Last_name" class="control-label"></label>
+                <input asp-for="Last_name" class="form-control" />
+                <span asp-validation-for="Last_name" class="text-danger"></span>
+            </div> <div class="form-group">
+                <label asp-for="Full_Name" class="control-label"></label>
+                <input asp-for="Full_Name" class="form-control" />
+                <span asp-validation-for="Full_Name" class="text-danger"></span>
+            </div> <div class="form-group">
+                <label asp-for="Father_Name" class="control-label"></label>
+                <input asp-for="Father_Name" class="form-control" />
+                <span asp-validation-for="Father_Name" class="text-danger"></span>
+            </div> <div class="form-group">
+                <label asp-for="Mother_Name" class="control-label"></label>
+                <input asp-for="Mother_Name" class="form-control" />
+                <span asp-validation-for="Mother_Name" class="text-danger"></span>
+            </div> <div class="form-group">
+                <label asp-for="Mobile_Number" class="control-label"></label>
+                <input asp-for="Mobile_Number" class="form-control" />
+                <span asp-validation-for="Mobile_Number" class="text-danger"></span>
+            </div> <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div> <div class="form-group">
+                <label asp-for="Thana" class="control-label"></label>
+                <input asp-for="Thana" class="form-control" />
+                <span asp-validation-for="Thana" class="text-danger"></span>
+            </div> <div class="form-group">
+                <label asp-for="District" class="control-label"></label>
+                <input asp-for="District" class="form-control" />
+                <span asp-validation-for="District" class="text-danger"></span>
+            </div> <div class="form-group">
+                <label asp-for="Date_Of_Birth" class="control-label"></label>
+                <input asp-for="Date_Of_Birth" class="form-control" />
+                <span asp-validation-for="Date_Of_Birth" class="text-danger"></span>
+            </div> <div class="form-group">
+                <label asp-for="Id_card" class="control-label"></label>
+                <input asp-for="Id_card" class="form-control" />
+                <span asp-validation-for="Id_card" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Religions" class="control-label"></label>
+                <select asp-for="Religions" class="form-control" asp-items="Html.GetEnumSelectList<Religions> ()">
+                    <option value=""> Please Chose Your Religions</option>
+                </select>
+                <span asp-validation-for="Religions" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(Model => Model.Nationlity, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(Model => Model.Nationlity, new SelectList(Enum.GetValues(typeof(Nationlity))), new { @class = "form-control" })
+                @Html.ValidationMessageFor(Model => Model.Nationlity, "", new { @class = "text-denger" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <select asp-for="Gender" class="form-control" asp-items="Html.GetEnumSelectList<Gender> ()">
+                    <option value=""> Please Chose Your Gender</option>
+                </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+
+                 <div class="form-group">
+                    @Html.LabelFor(Model => Model.Class_managementId, "Class", htmlAttributes: new { @class = "control-label" })
+                    @Html.DropDownListFor(Model => Model.Class_managementId, new SelectList(ViewBag.Class, "Value", "Text"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(Model => Model.Class_managementId)
+
+                </div>
+
+            <div class="form-group">
+                <input type="submit" value="save" class="text-danger" />
+            </div>
+        </form>
+    </div>
+</div>

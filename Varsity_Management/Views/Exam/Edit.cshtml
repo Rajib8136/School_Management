@@ -1,0 +1,53 @@
+﻿@model Varsity_Management.ViewModel.StudentViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1> Exam Result Edit </h1>
+<div class="row">
+    <form asp-action="Edit" method="post">
+
+        <input type="hidden" asp-for="Id" />
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="Full_Name" class="control-label"></label>
+            <input asp-for="Full_Name" class="form-control" />
+            <span asp-validation-for="Full_Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+          
+                <div class="form-group">
+                    @Html.LabelFor(Model => Model.ExamId, "Exam_Name", htmlAttributes: new { @class = "control-label" })
+                    @Html.DropDownListFor(Model => Model.ExamId, new SelectList(ViewBag.ExamId, "Value", "Text"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(Model => Model.ExamId)
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(Model => Model.SubId, "Subject", htmlAttributes: new { @class = "control-label" })
+                    @Html.DropDownListFor(Model => Model.SubId, new SelectList(ViewBag.SubId, "Value", "Text"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(Model => Model.SubId)
+
+                </div>
+                
+                <div class="form-group">
+                    @Html.LabelFor(Model => Model.GradeId, "Grade", htmlAttributes: new { @class = "control-label" })
+                    @Html.DropDownListFor(Model => Model.GradeId, new SelectList(ViewBag.gradeId, "Value", "Text"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(Model => Model.GradeId)
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(Model => Model.SessionId, "Session", htmlAttributes: new { @class = "control-label" })
+                    @Html.DropDownListFor(Model => Model.SessionId, new SelectList(ViewBag.SessionId, "Value", "Text"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(Model => Model.SessionId)
+
+                </div>
+            </div>
+                
+        <div class="form-group">
+            <input type="submit" value="Update" class="text-danger" />
+        </div>
+    </form>
+</div>

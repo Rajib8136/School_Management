@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Varsity_Management.Models.Student>
+
+@{ 
+    ViewData["Title"] = "Index";
+   
+    
+}
+
+<h1>Index</h1>
+<a class="btn btn-success" asp-action="Create"> Create Here</a>
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+       
+            <th>@Html.DisplayNameFor(Model => Model.Full_Name)</th>
+            <th>@Html.DisplayNameFor(Model => Model.Father_Name)</th>
+            <th>@Html.DisplayNameFor(Model => Model.Mother_Name)</th>
+            <th>@Html.DisplayNameFor(Model => Model.Mobile_Number)</th>
+            <th>@Html.DisplayNameFor(Model => Model.Address)</th>
+ 
+        
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+            {
+        <tr>
+            
+            <td>@Html.DisplayFor(c => item.Full_Name)</td>
+            <td>@Html.DisplayFor(c => item.Father_Name)</td>
+            <td>@Html.DisplayFor(c => item.Mother_Name)</td>
+            <td>@Html.DisplayFor(c => item.Mobile_Number)</td>
+            <td>@Html.DisplayFor(c => item.Address)</td>
+   
+            <td>
+                <a asp-action="Edit" class="btn btn-success" asp-route-id="@item.Id"> Edit </a> <br /> 
+                </td>
+            <td>
+                <a asp-action="Delete" class="btn btn-primary" asp-route-id="@item.Id"> Delete </a>
+           </td>
+
+
+        </tr>
+            }
+    </tbody>
+</table>

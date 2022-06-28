@@ -1,0 +1,45 @@
+﻿@model Varsity_Management.Models.Exam
+
+@{ 
+    ViewData["Title"] = "Create";
+}
+
+<h1> Exam sheet </h1>
+<div class="row">
+    <form asp-action="Create" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+       
+        <div class="form-group">
+          
+                <div class="form-group">
+                    <label asp-for="Exam_Name" class="control-label"></label>
+                    <input asp-for="Exam_Name" class="form-control" />
+                    <span asp-validation-for="Exam_Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Subject" class="control-label"></label>
+                    <input asp-for="Subject" class="form-control" />
+                    <span asp-validation-for="Subject" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Mark" class="control-label"></label>
+                    <input asp-for="Mark" class="form-control" />
+                    <span asp-validation-for="Mark" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Grade" class="control-label"></label>
+                    <input asp-for="Grade" class="form-control" />
+                    <span asp-validation-for="Grade" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Session" class="control-label"></label>
+                    <input asp-for="Session" class="form-control" />
+                    <span asp-validation-for="Session" class="text-danger"></span>
+                </div>
+            
+        </div>
+        <div class="form-group">
+            <input type="submit" value="save" class="text-danger" />
+        </div>
+    </form>
+</div>
